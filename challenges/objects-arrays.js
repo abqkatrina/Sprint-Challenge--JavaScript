@@ -57,7 +57,7 @@ console.log(tyrannosaurus.period);
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
 console.log(tyrannosaurus.roar);
 
-
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 // ==== Arrays ====
 
 // Given an array of college graduates.  Complete the following requests using any array method you like
@@ -79,9 +79,7 @@ const graduates = [
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-function uniList(graduates){
-  universities.push(graduates.university);
-  universities.sort();}
+
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
@@ -91,13 +89,19 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = [];
-function contact(){
-graduates.filter(contactInfo.push(`${graduates.first_name} ${graduates.email}`));}
-console.log(contactInfo);
+  function contact(){
+
+    graduates.filter(contact(graduates));
+  contactInfo.push(`'${graduates.first_name}' + ' ' + '${graduates.email}'`);}
+  console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
+
 const unisWithUni = [];
-function uni(){
+for (let i = 0; i < graduates.length; i++) {
+    if (graduates[i].university.includes('uni')) {
+        unisWithUni.push(graduates[i].university);
+    }
 }
 console.log(unisWithUni);
 
@@ -120,15 +124,20 @@ const zooAnimals = [
 ];
 
 /* Request 1: .forEach()
-
-The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
+ displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
 //
 const displayNames = [];
-function getDisplayNames (item){
-  const animalName = `Name: ${item.animal_name}, Scientific: ${scientific.name}`;
-  zooAnimals.forEach(displayNames.push(animalName));}
+  function getName(item) {
+    var nameName = [item.animal_name, item.scientific_name].join(" ");
+    return nameName;
+  }
+
+  function listName(value){
+  zooAnimals.forEach(getName());
+  displayNames.push(nameName);
+  }
     console.log(displayNames);
 
 /* Request 2: .map()
@@ -138,8 +147,9 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 const lowCaseAnimalNames = [];
 function getLowerCase(item) {
- [item.animal_name].join(" ");
+ var smallName = [item.animal_name.toLowerCase].join(" ");
   return zooAnimals.map(getLowerCase);
+  lowCaseAnimalNames.push(smallName);
 }
 console.log(lowCaseAnimalNames);
 
@@ -149,9 +159,8 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-  const lowPopulationAnimals = [];
+const lowPopulationAnimals = [];
 function lowPop(){
-
 zooAnimals.filter(lowPopulationAnimals.push(zooAnimals.population < 5));
 };
 console.log(lowPopulationAnimals);
@@ -161,8 +170,19 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 */
 const populationTotal = 0;
-function totalPop(){
+function getPop(){
+  var pop = [zooAnimals.population];
 };
+
+function addPop(total, pop){
+  total + pop;
+};
+
+function totalPop(){
+  zooanimals.population.reduce(addPop, 0);
+  populationTotal = totalPop;
+};
+
 console.log(populationTotal);
 
 
